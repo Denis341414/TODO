@@ -1,0 +1,73 @@
+.TODO {
+    font-size: 64px;
+    text-align: center;
+    font-weight: 900;
+    color: aliceblue;
+    padding-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .container {
+    gap: 15px;
+    width: 50vw;
+    height: 60vh;
+    border-radius: 40px;
+    background-color: rgb(264, 167, 167);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: justify;
+  }
+
+  .taskBody {
+    height: 30vh;
+  }
+  
+  textarea {
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: justify;
+  }
+  .container * {
+    width: 467px;
+  }
+
+  .btns {
+    display: flex;
+    height: 60px;
+  }
+
+  button {
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    transition: all .3s ease;
+  }
+
+  .tasks {
+    background: rgb(178, 176, 176);
+  }
+
+  .tasks:hover {
+    background-color: rgb(166, 153, 153);
+  }
+
+  .add {
+    background: rgb(255, 135, 135);
+  }
+
+  .add:hover {
+    background: rgb(255, 135, 135);
+  }

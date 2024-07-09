@@ -9,17 +9,17 @@ const taskBody = ref('')
 const massivTasks = []
 const flagSwitch = ref(true)
 
-// function getOfLocaleStorage() {
-//   for (let key in localStorage) {
-//     if (!localStorage.hasOwnProperty(key)) {
-//       continue; // пропустит такие ключи, как "setItem", "getItem" и так далее
-//     }
-//     massivTasks.push(JSON.parse(localStorage.getItem(key)))
-    
-//   }
+
+for (let key in localStorage) {
+  if (!localStorage.hasOwnProperty(key)) {
+    continue; // пропустит такие ключи, как "setItem", "getItem" и так далее
+  }
+  massivTasks.push(JSON.parse(localStorage.getItem(key)))
   
-//   console.log(massivTasks)
-// }
+}
+
+console.log(massivTasks)
+
 
 
 function switcher() {
@@ -32,13 +32,13 @@ function addTasksInLocaleStorage() {
     taskBody: taskBody.value
   }))
 
-  for (let key in localStorage) {
-    if (!localStorage.hasOwnProperty(key)) {
-      continue; // пропустит такие ключи, как "setItem", "getItem" и так далее
-    }
-    massivTasks.push(JSON.parse(localStorage.getItem(key)))
-    
-  }
+  title.value = ''
+  taskBody.value = ''
+
+  setTimeout(() => {
+    window.location.reload()
+  }, 2000)
+
   
   console.log(massivTasks)
   // massivTasks.push({

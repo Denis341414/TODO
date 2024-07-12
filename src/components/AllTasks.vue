@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-
 defineProps({
     flag: {
         type: Boolean,
@@ -18,6 +17,7 @@ defineProps({
 
 
 
+
 </script>
 
 <template>
@@ -29,11 +29,10 @@ defineProps({
         <div class="taskMassivCard">
             <div
             class="task"
-            v-for="el in TASKS" :key="el.id">
+            v-for="el in TASKS" :key="el.id"> 
                 <div class="name">{{ el.title }}</div>
-                <div class="buttonsTask">
-                    <button class="info">info</button>
-                    <button class="close">x</button>
+                <div class="info">
+                    {{ el.taskBody }}
                 </div>
             </div>  
         </div>
@@ -41,13 +40,44 @@ defineProps({
 </template>
 
 <style scoped>
+    .name {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+        color: rgb(70, 65, 59);
+        font-weight: 900;
+        
+    }
+    .task {
+        border-radius: 50px;
+        height: 5em;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background: rgb(244, 194, 194);
+        position: relative;
+    }
+    .info {
+        font-size: 16px;
+        padding: 5px 40px;
+        width: 50vw;
+        border: none;
+        min-height: 5em;
+        border-radius: 50px;
+        color: aliceblue;
+        background: rgb(233, 126, 126);
+        margin-right: 15px;
+        position: absolute;
+        right: -15px;
+    }
     .contain {
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
         width: 80vw;
-        height: 80vh;
         background: rgb(212, 211, 211);
         border-radius: 40px;
     }
@@ -87,17 +117,12 @@ defineProps({
         font-weight: 900;
     }
     .taskMassivCard {
-        background-color: aqua;
         width: 70vw;
-        height: 65vh;
+        min-height: 65vh;
         padding: 40px;
-        display: grid;
-        grid-template-columns: repeat(3, 33%);
-    }
-    .task {
         display: flex;
-        justify-content: space-between;
-        height: max-content;
-        width: 10vw;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
 </style>

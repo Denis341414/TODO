@@ -41,10 +41,6 @@ function addTasksInLocaleStorage() {
 
   
   console.log(massivTasks)
-  // massivTasks.push({
-  //   title: title.value, taskBody: taskBody.value, id: Date.now()
-  // })
-  // console.log(massivTasks)
 }
 </script>
 

@@ -1,12 +1,12 @@
 <script setup>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 
 import AllTasks from './components/AllTasks.vue';
 
 
 const title = ref('')
 const taskBody = ref('')
-const massivTasks = []
+const massivTasks = reactive([])
 const flagSwitch = ref(true)
 
 
@@ -27,9 +27,10 @@ function switcher() {
 }
 
 function addTasksInLocaleStorage() {
-  localStorage.setItem(Date.now() , JSON.stringify({
+  localStorage.setItem(Date.now(), JSON.stringify({
     title: title.value,
-    taskBody: taskBody.value
+    taskBody: taskBody.value,
+    id: Date.now()
   }))
 
   title.value = ''
@@ -37,7 +38,7 @@ function addTasksInLocaleStorage() {
 
   setTimeout(() => {
     window.location.reload()
-  }, 2000)
+  }, 100)
 
   
   console.log(massivTasks)

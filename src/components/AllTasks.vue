@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+
 defineProps({
     flag: {
         type: Boolean,
@@ -14,6 +15,10 @@ defineProps({
         required: true,
     }
 })
+
+const delTask = computed((name) => {
+    localStorage.removeItem(name)
+}) 
 
 
 
@@ -33,13 +38,31 @@ defineProps({
                 <div class="name">{{ el.title }}</div>
                 <div class="info">
                     {{ el.taskBody }}
+                    <button class="delete" @click="delTask(el.id)">delete</button>
                 </div>
-            </div>  
+            </div> 
         </div>
     </div>
 </template>
 
 <style scoped>
+    .delete {
+        border: none;
+        
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: rgb(69, 74, 69);
+        font-size: 20px;
+        font-weight: 900;
+        padding: 5px;
+        border-radius: 20px;
+        transition: all .2s ease;
+    }
+    .delete:hover {
+        color: rgb(180, 24, 24);
+        background-color: rgb(200, 200, 200);
+    }
     .name {
         display: flex;
         align-items: center;

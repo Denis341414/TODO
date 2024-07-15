@@ -5,6 +5,8 @@
 }
 
 body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
     background: rgb(238,133,133);
     background: linear-gradient(180deg, rgba(238,133,133,1) 0%, rgba(177,45,45,1) 100%);
     background-repeat: no-repeat;
